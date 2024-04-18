@@ -17,6 +17,7 @@ export sub_dir_static1="annon_search/static/css/"
 export sub_dir_static2="annon_search/static/images/"
 
 
+
 #end sub DIR
 
 #begin copy path
@@ -35,6 +36,7 @@ export fileDB1="database/main_db.sql"
 export fileDB2="database/search.sql"
 export fileCSS="css/search.css"
 export fileStart="start_server.py"
+export fileToStart="start_xampp_services.cmd"
 
 #end of copy path
 
@@ -81,6 +83,7 @@ cp $fileCSS /C/$fileDir/static/
 sleep 3
 cp $fileStart /C/$fileDir/
 sleep 3
+cp $fileToStart /C/$fileDir/
 echo "Checking all files"
 find /C/annon_search/*
 sleep 3
@@ -114,6 +117,7 @@ sleep 3
 find /C/$fileDir/
 
 echo "all set!"
+echo "Please run start_xampp_services.cmd to start MYSQL first before continuing"
 echo "Now Open C folder and run start_server.py"
 exit
 
