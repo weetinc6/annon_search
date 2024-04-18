@@ -1,6 +1,10 @@
 # annon_search
 Anonymous search engine, freedom for all open source
 
+# installation link
+
+https://github.com/weetinc6/annon_search
+
 # Show some love
 if you are from nigeria you can kindly text me 08102898827
 
