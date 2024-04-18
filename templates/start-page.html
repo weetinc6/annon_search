@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>{{ anon_search }}</title>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='css/search.css' ) }}">
+    </head>
+
+    <body>
+
+        <table align="right" width="30%">
+            <td align="right">
+                <button class="ainstall" onclick="installAnnon(this.event)">Install Anonymous</button>
+            </td>
+        </table>
+
+        <br><br>
+        <center>
+            <br>
+            
+            <image src="{{ url_for('static', filename='images/logo_annon.png' ) }}" width="250" />
+            <br>
+            <br>
+            <br>
+                <form method="GET" action="search">
+                <input type="text" name="q" class="xy-search" placeholder="Search the web Anonymously"/>
+        <button><image src="{{ url_for('static', filename='images/search.png' ) }}" width="40" /></button>
+    </form>
+
+        <p>Privacy search engine</p>  <b>We are Legion</b> | <b>We are Anonymous</b> | <b>We do not forget</b>
+        <p>You deserve freedom, you deserve <b>Anonymous</b></p>
+        <p>Your IP: <b> {{ annon_ip }}</b></p>
+    </center>
+    
+
+    
+    <script>
+
+        const searchWeb = () =>{
+            var q_search = document.querySelector("#q");
+            var q_search_text = q_search.value;
+            if(!q_search_text){
+
+            }
+            else{
+            window.location.href=`search?q=`+q_search_text
+        }
+    }
+
+    </script>
+
+        
+    </body>
+</html>

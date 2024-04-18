@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>
+        {{ title }} | {{ q }}
+    </title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/search.css' ) }}">
+    
+</head>
+
+
+<body>
+
+    <table width="100%">
+    <td>
+    <a href="./">
+        <image src="{{ url_for('static', filename='images/logo_annon.png' ) }}" width="100" />
+    </a>
+    </td>
+    <td>    
+    <form method="GET" action="">
+        <input type="text" required="" name="q" value="{{ q }}" class="table-search" placeholder="Search the web Anonymously" name="q" />
+<button onclick="searchWeb()"><image src="{{ url_for('static', filename='images/search.png' ) }}" width="40" /></button>
+</form>
+</td>
+<td align="right">
+    <button class="ainstall" onclick="installAnnon(this.event)">Install Anonymous</button>
+</td>
+
+</table>
+<hr size="1px" />
+<div class="content-web">
+    <table width="100%" style="color: white;">
+    <td align="left" class="openWeb">
+        
+        <b>Open Web</b>
+    </div>
+    </td>
+   
+    <td align="center">
+        <p>Dark Web</p>
+    </td>
+   
+    <td align="center">
+        <p>4Chan</p>
+    </td>
+  
+    <td align="center">
+        <p>Hidden Wiki</p>
+    </td>
+
+    
+</table>
+</div>
+<br>
+
+<table width="100%" style="font-size: 20px;">
+    <td align="left">
+        Your Anonymous IP: {{ ip }}
+    </td>
+
+    <td align="right">
+        Browser trackers: {{ browser_status }}
+    </td>
+    
+</table>
+
+<br>
+<b>Search Results</b>
+
+<br><br>
+
+<div style="padding: 10px">
+{% for rows in row %}
+{% if rows %}
+<image src="{{ rows[3] }}"></image>
+<a href="{{ rows[4] }}">{{ rows[1] }}</a>
+<p>{{ rows[2] }}</p>
+<a href="{{ rows[4] }}"><font color="green">
+<b>{{ rows[4] }}</b></font></a>
+<br><br>
+{% else %}
+
+<center>Not found</center>
+
+{% endif %}
+
+{% endfor %}
+</div>
+<br><br>
+<br><br><br>
+
+
+<div class="bg-foot">  
+    <br>
+    <center>
+        <b>Annon</b> will masking you till go off the web<br>
+        Made with love by <b>Victor Zucks.Net</b> | <a href="donate"><b>Donate</b></a>
+    </center>
+    <br>
+</div>
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>
